@@ -17,6 +17,16 @@
 		75C15CF21D0F614100C55B22 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15CF11D0F614100C55B22 /* PostDetailTableViewController.swift */; };
 		75C15CF51D0F630800C55B22 /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15CF41D0F630800C55B22 /* AddPostTableViewController.swift */; };
 		75C15CF71D0F635E00C55B22 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15CF61D0F635E00C55B22 /* SearchResultsTableViewController.swift */; };
+		75C15CF91D0F648E00C55B22 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15CF81D0F648E00C55B22 /* Stack.swift */; };
+		75C15D061D0F6BE000C55B22 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75C15D041D0F6BE000C55B22 /* Model.xcdatamodeld */; };
+		75C15DD11D10A07200C55B22 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCB1D10A07200C55B22 /* Comment+CoreDataProperties.swift */; };
+		75C15DD21D10A07200C55B22 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCC1D10A07200C55B22 /* Comment.swift */; };
+		75C15DD31D10A07200C55B22 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCD1D10A07200C55B22 /* Post+CoreDataProperties.swift */; };
+		75C15DD41D10A07200C55B22 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCE1D10A07200C55B22 /* Post.swift */; };
+		75C15DD51D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCF1D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift */; };
+		75C15DD61D10A07200C55B22 /* SyncableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DD01D10A07200C55B22 /* SyncableObject.swift */; };
+		75C15DD91D10A50A00C55B22 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DD81D10A50A00C55B22 /* PostController.swift */; };
+		75C15DDB1D10AE3E00C55B22 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DDA1D10AE3E00C55B22 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +63,16 @@
 		75C15CF11D0F614100C55B22 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		75C15CF41D0F630800C55B22 /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		75C15CF61D0F635E00C55B22 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		75C15CF81D0F648E00C55B22 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		75C15D051D0F6BE000C55B22 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		75C15DCB1D10A07200C55B22 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		75C15DCC1D10A07200C55B22 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		75C15DCD1D10A07200C55B22 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		75C15DCE1D10A07200C55B22 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		75C15DCF1D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SyncableObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		75C15DD01D10A07200C55B22 /* SyncableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncableObject.swift; sourceTree = "<group>"; };
+		75C15DD81D10A50A00C55B22 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		75C15DDA1D10AE3E00C55B22 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +103,9 @@
 		68658B1B1CF8A1D60016C5CD = {
 			isa = PBXGroup;
 			children = (
+				75C15DD71D10A07600C55B22 /* Model */,
 				68658B261CF8A1D60016C5CD /* Timeline */,
+				75C15DDC1D10C85600C55B22 /* Controllers */,
 				68658B3B1CF8A1D60016C5CD /* TimelineTests */,
 				68658B461CF8A1D60016C5CD /* TimelineUITests */,
 				68658B251CF8A1D60016C5CD /* Products */,
@@ -104,11 +126,13 @@
 			isa = PBXGroup;
 			children = (
 				68658B2B1CF8A1D60016C5CD /* Main.storyboard */,
+				75C15D041D0F6BE000C55B22 /* Model.xcdatamodeld */,
 				75C15CF31D0F615600C55B22 /* View Controllers */,
 				68658B271CF8A1D60016C5CD /* AppDelegate.swift */,
 				68658B2E1CF8A1D60016C5CD /* Assets.xcassets */,
 				68658B301CF8A1D60016C5CD /* LaunchScreen.storyboard */,
 				68658B331CF8A1D60016C5CD /* Info.plist */,
+				75C15CF81D0F648E00C55B22 /* Stack.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -134,12 +158,34 @@
 		75C15CF31D0F615600C55B22 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				75C15DDA1D10AE3E00C55B22 /* PostTableViewCell.swift */,
 				75C15CF61D0F635E00C55B22 /* SearchResultsTableViewController.swift */,
 				75C15CF41D0F630800C55B22 /* AddPostTableViewController.swift */,
 				75C15CEF1D0F60CE00C55B22 /* PostListTableViewController.swift */,
 				75C15CF11D0F614100C55B22 /* PostDetailTableViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		75C15DD71D10A07600C55B22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75C15DCB1D10A07200C55B22 /* Comment+CoreDataProperties.swift */,
+				75C15DCC1D10A07200C55B22 /* Comment.swift */,
+				75C15DCD1D10A07200C55B22 /* Post+CoreDataProperties.swift */,
+				75C15DCE1D10A07200C55B22 /* Post.swift */,
+				75C15DCF1D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift */,
+				75C15DD01D10A07200C55B22 /* SyncableObject.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		75C15DDC1D10C85600C55B22 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				75C15DD81D10A50A00C55B22 /* PostController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +256,7 @@
 				TargetAttributes = {
 					68658B231CF8A1D60016C5CD = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5WJ44R4U4C;
 					};
 					68658B371CF8A1D60016C5CD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -273,10 +320,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C15DD61D10A07200C55B22 /* SyncableObject.swift in Sources */,
 				68658B281CF8A1D60016C5CD /* AppDelegate.swift in Sources */,
+				75C15DDB1D10AE3E00C55B22 /* PostTableViewCell.swift in Sources */,
+				75C15DD41D10A07200C55B22 /* Post.swift in Sources */,
 				75C15CF01D0F60CE00C55B22 /* PostListTableViewController.swift in Sources */,
+				75C15DD11D10A07200C55B22 /* Comment+CoreDataProperties.swift in Sources */,
+				75C15DD31D10A07200C55B22 /* Post+CoreDataProperties.swift in Sources */,
+				75C15DD51D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift in Sources */,
 				75C15CF71D0F635E00C55B22 /* SearchResultsTableViewController.swift in Sources */,
+				75C15D061D0F6BE000C55B22 /* Model.xcdatamodeld in Sources */,
 				75C15CF51D0F630800C55B22 /* AddPostTableViewController.swift in Sources */,
+				75C15CF91D0F648E00C55B22 /* Stack.swift in Sources */,
+				75C15DD91D10A50A00C55B22 /* PostController.swift in Sources */,
+				75C15DD21D10A07200C55B22 /* Comment.swift in Sources */,
 				75C15CF21D0F614100C55B22 /* PostDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,10 +478,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devmountain.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -432,10 +492,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devmountain.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -525,6 +588,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		75C15D041D0F6BE000C55B22 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				75C15D051D0F6BE000C55B22 /* Model.xcdatamodel */,
+			);
+			currentVersion = 75C15D051D0F6BE000C55B22 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 68658B1C1CF8A1D60016C5CD /* Project object */;
 }
