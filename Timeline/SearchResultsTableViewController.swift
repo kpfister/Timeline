@@ -38,14 +38,14 @@ class SearchResultsTableViewController: UITableViewController {
     }
 
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//       guard let cell = tableView.dequeueReusableCellWithIdentifier("resultsCell", forIndexPath: indexPath) as? PostTableViewCell,
-//        let result = resultsArray[indexPath]
-//
-//        // Configure the cell...
-//
-//        return cell
-//    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       guard let cell = tableView.dequeueReusableCellWithIdentifier("resultsCell", forIndexPath: indexPath) as? PostTableViewCell,
+        let result = resultsArray[indexPath.row] as? Post else { return UITableViewCell()}
+
+        cell.updateWithPost(result)
+        
+        return cell
+    }
     
 
     /*
