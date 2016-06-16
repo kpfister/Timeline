@@ -31,3 +31,6 @@ class Post: SyncableObject {
         }
     }
 }
+protocol SearchableRecord() {
+    
+}

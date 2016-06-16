@@ -176,7 +176,7 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     func presentCommentAlert() {
         let alertController = UIAlertController(title: "Add Comment", message: nil, preferredStyle: .Alert)
         alertController.addTextFieldWithConfigurationHandler { (textField) in
-            <#code#>
+            
         }
         let addCommentAction = UIAlertAction(title: "Add Comment", style: .Default) { (action) in
             guard let commentText = alertController.textFields?.first?.text,

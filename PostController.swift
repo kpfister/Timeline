@@ -42,6 +42,7 @@ class PostController {
         }
         let post = Post(photoData: photoData)
         addCommentToPost(caption, post: post)
+        saveContext()
     }
     
     func addCommentToPost(text: String, post: Post) {

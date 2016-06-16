@@ -9,7 +9,45 @@
 import UIKit
 
 class AddPostTableViewController: UITableViewController {
+    
+    
+    var image: UIImage?
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var addPostImageView: UIImageView!
 
+    @IBOutlet weak var addPostCommentTextField: UITextField!
+    
+    @IBOutlet weak var selectImageButton: UIButton!
+    //MARK: Actions 
+    
+    @IBAction func addPostButtonTapped(sender: AnyObject) {
+        if let image = addPostImageView.image, let comment = addPostCommentTextField.text {
+            PostController.sharedInstance.createPost(image, caption: comment)
+            self.dismissViewControllerAnimated(true, completion: nil)
+            self.tableView.reloadData()
+        } else {
+            let alertController = UIAlertController(title: "Missing Information", message: "Sometthing is missing... Check your image and comment.", preferredStyle: .Alert)
+            let dismissAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
+            alertController.addAction(dismissAction)
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+        
+    }
+    
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    @IBAction func selectImageButtonTapped(sender: AnyObject) {
+        addPostImageView.image = UIImage(named: "house")
+        selectImageButton.setTitle("", forState: .Normal)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,16 +65,7 @@ class AddPostTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
+  
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
