@@ -65,15 +65,18 @@ class PostListTableViewController: UITableViewController {
     
     
     
-    /*
+    
      override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+     let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as? PostTableViewCell ?? PostTableViewCell()
+        
+        let post = PostController.sharedInstance.posts[indexPath.row]
+        cell.updateWithPost(post)
      
      // Configure the cell...
      
      return cell
      }
-     */
+    
     
     /*
      // Override to support conditional editing of the table view.

@@ -13,6 +13,8 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     
     @IBOutlet weak var imageView: UIImageView!
     
+    
+    
     var fetchedResultsController: NSFetchedResultsController?
     
     var post: Post?
@@ -36,6 +38,7 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     
     func updateWithPost(post: Post) {
         imageView.image = post.photo
+        tableView.reloadData()
         
     }
     
@@ -65,24 +68,49 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        guard let sections = fetchedResultsController?.sections else {return 1}
+        return sections.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        guard let sections = fetchedResultsController?.sections else { return 0 }
+        let sectionInfo = sections[section]
+        return sectionInfo.numberOfObjects
     }
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath)
+        
+        if let comment = fetchedResultsController?.objectAtIndexPath(indexPath) as? Comment {
+            
+            cell.textLabel?.text = comment.text
+//            cell.detailTextLabel?.text = comment.cloudKitRecordID?.recordName
+        }
+        
+        return cell
+    }
+    
+
     /*
-     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
+     if let playlist = playlist,
+     song = playlist.songs.objectAtIndex(indexPath.row) as? Song {
+     cell.textLabel?.text = song.name
+     cell.detailTextLabel?.text = song.artist*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     /*
      // Override to support conditional editing of the table view.
@@ -129,4 +157,65 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
      }
      */
     
+    //MARK: Actions
+    
+    @IBAction func followPostsButtonTapped(sender: AnyObject) {
+        
+    }
+    
+    
+    @IBAction func shareButtonTapped(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func commentButtonTapped(sender: AnyObject) {
+        presentCommentAlert()
+        
+    }
+    
+    func presentCommentAlert() {
+        let alertController = UIAlertController(title: "Add Comment", message: nil, preferredStyle: .Alert)
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            <#code#>
+        }
+        let addCommentAction = UIAlertAction(title: "Add Comment", style: .Default) { (action) in
+            guard let commentText = alertController.textFields?.first?.text,
+                let post = self.post else {return}
+            PostController.sharedInstance.addCommentToPost(commentText, post: post)
+        }
+        alertController.addAction(addCommentAction)
+        
+        let cancelACtion = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(cancelACtion)
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="CdB-rd-oGU" customClass="PostTableViewCell" customModule="Timeline" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="300" id="CdB-rd-oGU" customClass="PostTableViewCell" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CdB-rd-oGU" id="kL3-lf-o3O">
@@ -133,11 +133,23 @@
                                         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jES-h0-XV0">
                                             <rect key="frame" x="0.0" y="423" width="600" height="40"/>
                                             <items>
-                                                <barButtonItem title="Comment" id="LEf-pY-t1L" userLabel="Comment"/>
+                                                <barButtonItem title="Comment" id="LEf-pY-t1L" userLabel="Comment">
+                                                    <connections>
+                                                        <action selector="commentButtonTapped:" destination="yaR-tk-6zo" id="dAc-h9-qmv"/>
+                                                    </connections>
+                                                </barButtonItem>
                                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="gWi-iK-1SH"/>
-                                                <barButtonItem title="Share" id="e2W-sV-Uwd" userLabel="Share"/>
+                                                <barButtonItem title="Share" id="e2W-sV-Uwd" userLabel="Share">
+                                                    <connections>
+                                                        <action selector="shareButtonTapped:" destination="yaR-tk-6zo" id="6vU-x5-4AR"/>
+                                                    </connections>
+                                                </barButtonItem>
                                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="aOT-df-XfV"/>
-                                                <barButtonItem title="Follow Posts" id="JRn-A2-Aao" userLabel="Follow Posts"/>
+                                                <barButtonItem title="Follow Posts" id="JRn-A2-Aao" userLabel="Follow Posts">
+                                                    <connections>
+                                                        <action selector="followPostsButtonTapped:" destination="yaR-tk-6zo" id="tCD-2u-ud4"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </items>
                                         </toolbar>
                                     </subviews>
@@ -152,7 +164,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Q2o-J1-slS" detailTextLabel="Ybq-hk-Cek" style="IBUITableViewCellStyleSubtitle" id="ttn-Tu-mFj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" textLabel="Q2o-J1-slS" detailTextLabel="Ybq-hk-Cek" style="IBUITableViewCellStyleSubtitle" id="ttn-Tu-mFj">
                                 <rect key="frame" x="0.0" y="555" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ttn-Tu-mFj" id="O8R-vf-zTF">
