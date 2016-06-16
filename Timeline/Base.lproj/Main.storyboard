@@ -50,6 +50,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="yaR-tk-6zo" kind="show" identifier="postDetailFromSearch" id="baw-oR-shR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6H-28-nlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,7 +185,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="all-Qt-JXl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultsCell" id="all-Qt-JXl">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="all-Qt-JXl" id="SvR-nP-Y0U">
@@ -328,4 +331,7 @@
             <point key="canvasLocation" x="1004" y="1096"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="baw-oR-shR"/>
+    </inferredMetricsTieBreakers>
 </document>

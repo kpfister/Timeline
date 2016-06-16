@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Comment: SyncableObject {
+class Comment: SyncableObject, SearchableRecord {
 
     convenience init(post: Post, text: String, timestap: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName("Comment", inManagedObjectContext: context) else {
@@ -20,7 +20,12 @@ class Comment: SyncableObject {
         self.text = text
         self.post = post
         self.timestamp = timestamp
-        // self.recordName = self.nameForManagedObject() on the master but I don't know then this is asked for
+        self.recordName = NSUUID().UUIDString
+        //TODO: Replace with cloudkitmanaged object property name for record
+    }
+    
+    func matchesSearchTerm(searchTerm: String) -> Bool {
+        return text?.containsString(searchTerm) ?? false
     }
 
 }

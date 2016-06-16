@@ -6,16 +6,16 @@
     </entity>
     <entity name="Post" representedClassName=".Post" parentEntity="SyncableObject" syncable="YES">
         <attribute name="photoData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="post" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Comment" inverseName="post" inverseEntity="Comment" syncable="YES"/>
     </entity>
     <entity name="SyncableObject" representedClassName=".SyncableObject" syncable="YES">
         <attribute name="recordIDData" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="recordName" attributeType="String" syncable="YES"/>
-        <attribute name="timestamp" attributeType="Date" syncable="YES"/>
+        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SyncableObject" positionX="-45" positionY="0" width="128" height="90"/>
-        <element name="Post" positionX="-18" positionY="54" width="128" height="75"/>
         <element name="Comment" positionX="9" positionY="72" width="128" height="75"/>
+        <element name="Post" positionX="-18" positionY="54" width="128" height="75"/>
+        <element name="SyncableObject" positionX="-45" positionY="0" width="128" height="90"/>
     </elements>
 </model>

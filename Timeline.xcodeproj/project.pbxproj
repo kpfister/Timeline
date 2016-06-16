@@ -21,13 +21,14 @@
 		75C15D061D0F6BE000C55B22 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75C15D041D0F6BE000C55B22 /* Model.xcdatamodeld */; };
 		75C15DD11D10A07200C55B22 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCB1D10A07200C55B22 /* Comment+CoreDataProperties.swift */; };
 		75C15DD21D10A07200C55B22 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCC1D10A07200C55B22 /* Comment.swift */; };
-		75C15DD31D10A07200C55B22 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCD1D10A07200C55B22 /* Post+CoreDataProperties.swift */; };
-		75C15DD41D10A07200C55B22 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCE1D10A07200C55B22 /* Post.swift */; };
 		75C15DD51D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DCF1D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift */; };
 		75C15DD61D10A07200C55B22 /* SyncableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DD01D10A07200C55B22 /* SyncableObject.swift */; };
 		75C15DD91D10A50A00C55B22 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DD81D10A50A00C55B22 /* PostController.swift */; };
 		75C15DDB1D10AE3E00C55B22 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C15DDA1D10AE3E00C55B22 /* PostTableViewCell.swift */; };
 		75CFF4421D11BA81006D703A /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4411D11BA81006D703A /* CloudKitManager.swift */; };
+		75CFF4441D13155A006D703A /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4431D13155A006D703A /* SearchableRecord.swift */; };
+		75CFF4471D134338006D703A /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4451D134338006D703A /* Post+CoreDataProperties.swift */; };
+		75CFF4481D134338006D703A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4461D134338006D703A /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,13 +69,14 @@
 		75C15D051D0F6BE000C55B22 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		75C15DCB1D10A07200C55B22 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		75C15DCC1D10A07200C55B22 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		75C15DCD1D10A07200C55B22 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		75C15DCE1D10A07200C55B22 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		75C15DCF1D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SyncableObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		75C15DD01D10A07200C55B22 /* SyncableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncableObject.swift; sourceTree = "<group>"; };
 		75C15DD81D10A50A00C55B22 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		75C15DDA1D10AE3E00C55B22 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		75CFF4411D11BA81006D703A /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		75CFF4431D13155A006D703A /* SearchableRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
+		75CFF4451D134338006D703A /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		75CFF4461D134338006D703A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,10 +176,10 @@
 			children = (
 				75C15DCB1D10A07200C55B22 /* Comment+CoreDataProperties.swift */,
 				75C15DCC1D10A07200C55B22 /* Comment.swift */,
-				75C15DCD1D10A07200C55B22 /* Post+CoreDataProperties.swift */,
-				75C15DCE1D10A07200C55B22 /* Post.swift */,
 				75C15DCF1D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift */,
 				75C15DD01D10A07200C55B22 /* SyncableObject.swift */,
+				75CFF4451D134338006D703A /* Post+CoreDataProperties.swift */,
+				75CFF4461D134338006D703A /* Post.swift */,
 				75CFF4411D11BA81006D703A /* CloudKitManager.swift */,
 			);
 			name = Model;
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				75C15DD81D10A50A00C55B22 /* PostController.swift */,
+				75CFF4431D13155A006D703A /* SearchableRecord.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -326,16 +329,17 @@
 				75C15DD61D10A07200C55B22 /* SyncableObject.swift in Sources */,
 				68658B281CF8A1D60016C5CD /* AppDelegate.swift in Sources */,
 				75C15DDB1D10AE3E00C55B22 /* PostTableViewCell.swift in Sources */,
-				75C15DD41D10A07200C55B22 /* Post.swift in Sources */,
 				75C15CF01D0F60CE00C55B22 /* PostListTableViewController.swift in Sources */,
+				75CFF4481D134338006D703A /* Post.swift in Sources */,
 				75C15DD11D10A07200C55B22 /* Comment+CoreDataProperties.swift in Sources */,
-				75C15DD31D10A07200C55B22 /* Post+CoreDataProperties.swift in Sources */,
 				75C15DD51D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift in Sources */,
 				75C15CF71D0F635E00C55B22 /* SearchResultsTableViewController.swift in Sources */,
 				75C15D061D0F6BE000C55B22 /* Model.xcdatamodeld in Sources */,
 				75CFF4421D11BA81006D703A /* CloudKitManager.swift in Sources */,
+				75CFF4471D134338006D703A /* Post+CoreDataProperties.swift in Sources */,
 				75C15CF51D0F630800C55B22 /* AddPostTableViewController.swift in Sources */,
 				75C15CF91D0F648E00C55B22 /* Stack.swift in Sources */,
+				75CFF4441D13155A006D703A /* SearchableRecord.swift in Sources */,
 				75C15DD91D10A50A00C55B22 /* PostController.swift in Sources */,
 				75C15DD21D10A07200C55B22 /* Comment.swift in Sources */,
 				75C15CF21D0F614100C55B22 /* PostDetailTableViewController.swift in Sources */,

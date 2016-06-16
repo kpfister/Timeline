@@ -26,7 +26,6 @@ class AddPostTableViewController: UITableViewController {
         if let image = addPostImageView.image, let comment = addPostCommentTextField.text {
             PostController.sharedInstance.createPost(image, caption: comment)
             self.dismissViewControllerAnimated(true, completion: nil)
-            self.tableView.reloadData()
         } else {
             let alertController = UIAlertController(title: "Missing Information", message: "Sometthing is missing... Check your image and comment.", preferredStyle: .Alert)
             let dismissAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)

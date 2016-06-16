@@ -29,7 +29,8 @@ class PostController {
         let moc = Stack.sharedStack.managedObjectContext
         do {
             try moc.save()
-        } catch {
+        } catch let error as NSError{
+            print(error.localizedDescription)
             print("There was an error saving the context")
         }
         //        _ = try? moc.save()
@@ -49,5 +50,6 @@ class PostController {
         let comment = Comment(post: post, text: text)
         saveContext()
     }
+    //MARK: TODO - Make my ish non-optional once i add the syncable object
     
 }

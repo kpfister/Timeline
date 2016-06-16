@@ -9,7 +9,15 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
-
+    
+     
+     //Add a resultsArray property that contains a list of SearchableRecords
+    var resultsArray: [SearchableRecord] = [] // OH!!!! The [] give it an inital Value of an empty array
+//     Implement the UITableViewDatasource functions to display the search results.
+//     note: For now you will only display Post objects as a result of a search. Use the PostTableViewCell to do so.
+    
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,32 +28,25 @@ class SearchResultsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return resultsArray.count
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
+    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//       guard let cell = tableView.dequeueReusableCellWithIdentifier("resultsCell", forIndexPath: indexPath) as? PostTableViewCell,
+//        let result = resultsArray[indexPath]
+//
+//        // Configure the cell...
+//
+//        return cell
+//    }
+    
 
     /*
     // Override to support conditional editing of the table view.
