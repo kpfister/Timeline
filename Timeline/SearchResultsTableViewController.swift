@@ -13,6 +13,7 @@ class SearchResultsTableViewController: UITableViewController {
      
      //Add a resultsArray property that contains a list of SearchableRecords
     var resultsArray: [SearchableRecord] = [] // OH!!!! The [] give it an inital Value of an empty array
+    
 //     Implement the UITableViewDatasource functions to display the search results.
 //     note: For now you will only display Post objects as a result of a search. Use the PostTableViewCell to do so.
     

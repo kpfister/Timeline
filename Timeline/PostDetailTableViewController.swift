@@ -29,12 +29,7 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.estimatedRowHeight = 44
         setUpFetchedResultsController()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
+          }
     
     func updateWithPost(post: Post) {
         imageView.image = post.photo
@@ -165,7 +160,7 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     
     
     @IBAction func shareButtonTapped(sender: AnyObject) {
-        
+        presentActivityViewController()
     }
     
     @IBAction func commentButtonTapped(sender: AnyObject) {
@@ -190,6 +185,16 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func presentActivityViewController() {
+        
+        guard let photo = post?.photo,
+            let comment = post?.comments?.firstObject as? Comment,
+            let text = comment.text else { return }
+        
+        let activityViewController = UIActivityViewController(activityItems: [photo, text], applicationActivities: nil)
+        
+        presentViewController(activityViewController, animated: true, completion: nil)
+    }
     
 }
 

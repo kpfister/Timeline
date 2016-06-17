@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 
-class PostListTableViewController: UITableViewController {
+class PostListTableViewController: UITableViewController, UISearchResultsUpdating {
     
     var fetchedResultsController: NSFetchedResultsController?
+    var searchController: UISearchController?
     
     
     
@@ -61,6 +62,33 @@ class PostListTableViewController: UITableViewController {
         
         fetchedResultsController?.delegate = self
     }
+    // MARK: - Search Controller
+    
+    func setUpSearchController() {
+        
+        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SearchResultsTableViewController")
+        
+        searchController = UISearchController(searchResultsController: resultsController)
+        searchController?.searchResultsUpdater = self
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = true
+        tableView.tableHeaderView = searchController?.searchBar
+        
+        definesPresentationContext = true
+    }
+    
+    // MARK: - UISearchResultsDelegate
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        if let resultsViewController = searchController.searchResultsController as? SearchResultsTableViewController,
+            let searchTerm = searchController.searchBar.text?.lowercaseString,
+            let posts = fetchedResultsController?.fetchedObjects as? [Post] {
+            
+            resultsViewController.resultsArray = posts.filter({$0.matchesSearchTerm(searchTerm)})
+            resultsViewController.tableView.reloadData()
+        }
+    }
+
     
     
     
@@ -71,10 +99,8 @@ class PostListTableViewController: UITableViewController {
         
         let post = PostController.sharedInstance.posts[indexPath.row]
         cell.updateWithPost(post)
-     
-     // Configure the cell...
-     
-     return cell
+        
+        return cell
      }
     
     
@@ -114,21 +140,31 @@ class PostListTableViewController: UITableViewController {
      */
     
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toDetailVCSegue" {
-            guard let indexPath = tableView.indexPathForSelectedRow else {return}
-            guard let post = fetchedResultsController?.objectAtIndexPath(indexPath) as? Post else {return}
-            let destinationVC = segue.destinationViewController as? PostDetailTableViewController
-        destinationVC?.post = post
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "toPostDetail" {
             
+            if let detailViewController = segue.destinationViewController as? PostDetailTableViewController,
+                let selectedIndexPath = self.tableView.indexPathForSelectedRow,
+                let post = fetchedResultsController?.objectAtIndexPath(selectedIndexPath) as? Post {
+                
+                detailViewController.post = post
+            }
         }
         
-     }
-    
-    
+        if segue.identifier == "toPostDetailFromSearch" {
+            if let detailViewController = segue.destinationViewController as? PostDetailTableViewController,
+                let sender = sender as? PostTableViewCell,
+                let selectedIndexPath = (searchController?.searchResultsController as? SearchResultsTableViewController)?.tableView.indexPathForCell(sender),
+                let searchTerm = searchController?.searchBar.text?.lowercaseString,
+                let posts = fetchedResultsController?.fetchedObjects?.filter({ $0.matchesSearchTerm(searchTerm) }) as? [Post] {
+                
+                let post = posts[selectedIndexPath.row]
+                
+                detailViewController.post = post
+            }
+        }
+    }
    }
 
 extension PostListTableViewController: NSFetchedResultsControllerDelegate {

@@ -29,6 +29,7 @@
 		75CFF4441D13155A006D703A /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4431D13155A006D703A /* SearchableRecord.swift */; };
 		75CFF4471D134338006D703A /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4451D134338006D703A /* Post+CoreDataProperties.swift */; };
 		75CFF4481D134338006D703A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4461D134338006D703A /* Post.swift */; };
+		75CFF44A1D135CFA006D703A /* PhotoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4491D135CFA006D703A /* PhotoSelectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		75CFF4431D13155A006D703A /* SearchableRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
 		75CFF4451D134338006D703A /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		75CFF4461D134338006D703A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		75CFF4491D135CFA006D703A /* PhotoSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				75C15CF41D0F630800C55B22 /* AddPostTableViewController.swift */,
 				75C15CEF1D0F60CE00C55B22 /* PostListTableViewController.swift */,
 				75C15CF11D0F614100C55B22 /* PostDetailTableViewController.swift */,
+				75CFF4491D135CFA006D703A /* PhotoSelectViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				75C15DDB1D10AE3E00C55B22 /* PostTableViewCell.swift in Sources */,
 				75C15CF01D0F60CE00C55B22 /* PostListTableViewController.swift in Sources */,
 				75CFF4481D134338006D703A /* Post.swift in Sources */,
+				75CFF44A1D135CFA006D703A /* PhotoSelectViewController.swift in Sources */,
 				75C15DD11D10A07200C55B22 /* Comment+CoreDataProperties.swift in Sources */,
 				75C15DD51D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift in Sources */,
 				75C15CF71D0F635E00C55B22 /* SearchResultsTableViewController.swift in Sources */,

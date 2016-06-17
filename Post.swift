@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class Post: SyncableObject {
+class Post: SyncableObject, SearchableRecord {
     
     convenience init(photoData: NSData, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName("Post", inManagedObjectContext: context) else {

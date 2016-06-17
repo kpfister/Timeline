@@ -34,7 +34,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="yaR-tk-6zo" kind="show" identifier="toDetailVCSegue" id="8gc-jQ-SEF"/>
+                                    <segue destination="yaR-tk-6zo" kind="show" identifier="toPostDetail" id="8gc-jQ-SEF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -76,26 +76,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="200.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loQ-uF-YQZ">
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrU-ea-KVx">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="200.5"/>
-                                                    <state key="normal" title="Select Image"/>
                                                     <connections>
-                                                        <action selector="selectImageButtonTapped:" destination="Pqp-tB-S2Q" eventType="touchUpInside" id="qkF-L5-elo"/>
+                                                        <segue destination="PZO-Lh-D6G" kind="embed" identifier="embedPhotoSelect" id="Zcp-sd-5sQ"/>
                                                     </connections>
-                                                </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iMv-U8-udD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200.5"/>
-                                                </imageView>
+                                                </containerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="iMv-U8-udD" secondAttribute="bottom" id="0Na-Hd-xeK"/>
-                                                <constraint firstAttribute="bottom" secondItem="loQ-uF-YQZ" secondAttribute="bottom" id="NDb-4Y-9PP"/>
-                                                <constraint firstItem="loQ-uF-YQZ" firstAttribute="top" secondItem="6Oj-g6-14x" secondAttribute="top" id="OBC-Ml-Rj0"/>
-                                                <constraint firstItem="iMv-U8-udD" firstAttribute="leading" secondItem="6Oj-g6-14x" secondAttribute="leading" id="Uut-8j-qMb"/>
-                                                <constraint firstItem="iMv-U8-udD" firstAttribute="top" secondItem="6Oj-g6-14x" secondAttribute="top" id="XFj-th-q9z"/>
-                                                <constraint firstAttribute="trailing" secondItem="loQ-uF-YQZ" secondAttribute="trailing" id="pWR-0X-ZLX"/>
-                                                <constraint firstAttribute="trailing" secondItem="iMv-U8-udD" secondAttribute="trailing" id="xWl-fa-iz4"/>
-                                                <constraint firstItem="loQ-uF-YQZ" firstAttribute="leading" secondItem="6Oj-g6-14x" secondAttribute="leading" id="zAX-KA-lDb"/>
+                                                <constraint firstItem="ZrU-ea-KVx" firstAttribute="top" secondItem="6Oj-g6-14x" secondAttribute="top" id="0kb-UH-ArY"/>
+                                                <constraint firstItem="ZrU-ea-KVx" firstAttribute="leading" secondItem="6Oj-g6-14x" secondAttribute="leading" id="mNw-la-Z3N"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZrU-ea-KVx" secondAttribute="bottom" id="rAb-RQ-6lE"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZrU-ea-KVx" secondAttribute="trailing" id="uNi-ee-8Tf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -168,8 +160,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addPostCommentTextField" destination="gMK-3X-Ygr" id="aJb-eD-pAO"/>
-                        <outlet property="addPostImageView" destination="iMv-U8-udD" id="jHI-5J-28w"/>
-                        <outlet property="selectImageButton" destination="loQ-uF-YQZ" id="GD5-p1-Y0H"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6y-aw-mdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,8 +320,48 @@
             </objects>
             <point key="canvasLocation" x="1004" y="1096"/>
         </scene>
+        <!--Photo Select View Controller-->
+        <scene sceneID="ZvA-ot-NTk">
+            <objects>
+                <viewController id="PZO-Lh-D6G" customClass="PhotoSelectViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ffa-5o-gCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="200.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgV-mp-EDZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="200.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfv-Lp-SOW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="200.5"/>
+                                <state key="normal" title="Post Image"/>
+                                <connections>
+                                    <action selector="selectImageButtonTapped:" destination="PZO-Lh-D6G" eventType="touchUpInside" id="1ak-za-Qmq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sfv-Lp-SOW" firstAttribute="top" secondItem="Ffa-5o-gCJ" secondAttribute="top" id="5B7-8b-46J"/>
+                            <constraint firstItem="kgV-mp-EDZ" firstAttribute="top" secondItem="Ffa-5o-gCJ" secondAttribute="top" id="CSE-Jk-MyO"/>
+                            <constraint firstItem="kgV-mp-EDZ" firstAttribute="leading" secondItem="Ffa-5o-gCJ" secondAttribute="leading" id="JZv-CP-LTJ"/>
+                            <constraint firstItem="Sfv-Lp-SOW" firstAttribute="leading" secondItem="Ffa-5o-gCJ" secondAttribute="leading" id="Y7f-7M-jtL"/>
+                            <constraint firstAttribute="bottom" secondItem="Sfv-Lp-SOW" secondAttribute="bottom" id="c7i-NG-QVg"/>
+                            <constraint firstAttribute="trailing" secondItem="Sfv-Lp-SOW" secondAttribute="trailing" id="gkK-2d-Sya"/>
+                            <constraint firstAttribute="bottom" secondItem="kgV-mp-EDZ" secondAttribute="bottom" id="nRS-H0-a1B"/>
+                            <constraint firstAttribute="trailing" secondItem="kgV-mp-EDZ" secondAttribute="trailing" id="sr9-MC-07P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="Sfv-Lp-SOW" id="HFb-8C-TeB"/>
+                        <outlet property="imageView" destination="kgV-mp-EDZ" id="3mb-F0-XRH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khh-31-gy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="1599.25"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="baw-oR-shR"/>
+        <segue reference="8gc-jQ-SEF"/>
     </inferredMetricsTieBreakers>
 </document>
