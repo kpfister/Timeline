@@ -30,6 +30,7 @@
 		75CFF4471D134338006D703A /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4451D134338006D703A /* Post+CoreDataProperties.swift */; };
 		75CFF4481D134338006D703A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4461D134338006D703A /* Post.swift */; };
 		75CFF44A1D135CFA006D703A /* PhotoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF4491D135CFA006D703A /* PhotoSelectViewController.swift */; };
+		75CFF44C1D137FA1006D703A /* CloudKitManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFF44B1D137FA1006D703A /* CloudKitManagedObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		75CFF4451D134338006D703A /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		75CFF4461D134338006D703A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		75CFF4491D135CFA006D703A /* PhotoSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectViewController.swift; sourceTree = "<group>"; };
+		75CFF44B1D137FA1006D703A /* CloudKitManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManagedObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,8 @@
 		68658B1B1CF8A1D60016C5CD = {
 			isa = PBXGroup;
 			children = (
+				75C15CF31D0F615600C55B22 /* View Controllers */,
+				75CFF44D1D137FA6006D703A /* Protocols */,
 				75C15DD71D10A07600C55B22 /* Model */,
 				68658B261CF8A1D60016C5CD /* Timeline */,
 				75C15DDC1D10C85600C55B22 /* Controllers */,
@@ -133,7 +137,6 @@
 			children = (
 				68658B2B1CF8A1D60016C5CD /* Main.storyboard */,
 				75C15D041D0F6BE000C55B22 /* Model.xcdatamodeld */,
-				75C15CF31D0F615600C55B22 /* View Controllers */,
 				68658B271CF8A1D60016C5CD /* AppDelegate.swift */,
 				68658B2E1CF8A1D60016C5CD /* Assets.xcassets */,
 				68658B301CF8A1D60016C5CD /* LaunchScreen.storyboard */,
@@ -172,6 +175,7 @@
 				75CFF4491D135CFA006D703A /* PhotoSelectViewController.swift */,
 			);
 			name = "View Controllers";
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 		75C15DD71D10A07600C55B22 /* Model */ = {
@@ -192,9 +196,17 @@
 			isa = PBXGroup;
 			children = (
 				75C15DD81D10A50A00C55B22 /* PostController.swift */,
-				75CFF4431D13155A006D703A /* SearchableRecord.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		75CFF44D1D137FA6006D703A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				75CFF4431D13155A006D703A /* SearchableRecord.swift */,
+				75CFF44B1D137FA1006D703A /* CloudKitManagedObject.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +351,7 @@
 				75C15DD51D10A07200C55B22 /* SyncableObject+CoreDataProperties.swift in Sources */,
 				75C15CF71D0F635E00C55B22 /* SearchResultsTableViewController.swift in Sources */,
 				75C15D061D0F6BE000C55B22 /* Model.xcdatamodeld in Sources */,
+				75CFF44C1D137FA1006D703A /* CloudKitManagedObject.swift in Sources */,
 				75CFF4421D11BA81006D703A /* CloudKitManager.swift in Sources */,
 				75CFF4471D134338006D703A /* Post+CoreDataProperties.swift in Sources */,
 				75C15CF51D0F630800C55B22 /* AddPostTableViewController.swift in Sources */,
